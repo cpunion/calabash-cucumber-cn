@@ -13,7 +13,7 @@ Then /^我点按"([^\"]*)"$/ do |name|
   macro %Q|I press "#{name}"|
 end
 
-Then /^我点按"([^\"]*)"右(\d+)%下(\d+)$/ do |x,y,name|
+Then /^我点按"([^\"]*)"右(\d+)%下(\d+)$/ do |name,x,y|
   macro %Q|I press #{x}% right and #{y}% down from "#{name}"|
 end
 
@@ -62,11 +62,11 @@ end
 
 ## -- Entering text -- ##
 
-Then /^我在"([^\"]*)"中输入"([^\"]*)"$/ do |text_to_type, field_name|
+Then /^我在"([^\"]*)"中输入"([^\"]*)"$/ do |field_name, text_to_type|
   macro %Q|I enter "#{text_to_type}" into the "#{field_name}" field|
 end
 
-Then /^我在文本框"([^\"]*)"中输入"([^\"]*)"$/ do |text_to_type, field_name|
+Then /^我在文本框"([^\"]*)"中输入"([^\"]*)"$/ do |field_name, text_to_type|
   macro %Q|I enter "#{text_to_type}" into the "#{field_name}" text field|
 end
 
@@ -75,7 +75,7 @@ Then /^我在"([^\"]*)"中填写"([^\"]*)"$/ do |text_field, text_to_type|
   macro %Q|I fill in "#{text_field}" with "#{text_to_type}"|
 end
 
-Then /^我用软键盘输入"([^\"]*)"到"([^\"]*)"文本框$/ do |text_to_type, field_name|
+Then /^我用软键盘在文本框"([^\"]*)"中输入"([^\"]*)"$/ do |field_name, text_to_type|
   macro %Q|I use the native keyboard to enter "#{text_to_type}" into the "#{field_name}" text field|
 end
 
@@ -83,11 +83,11 @@ Then /^我在文本框中填写:$/ do |table|
   step %Q|I fill in text fields as follows:|, table
 end
 
-Then /^我在第(\d+)个文本框中输入"([^\"]*)"$/ do |text, index|
+Then /^我在第(\d+)个文本框中输入"([^\"]*)"$/ do |index, text|
   macro %Q|I enter "#{text}" into text field number #{index}|
 end
 
-Then /^我用软键盘在第(\d+)个文本框中输入"([^\"]*)"$/ do |text_to_type, index|
+Then /^我用软键盘在第(\d+)个文本框中输入"([^\"]*)"$/ do |index, text_to_type|
   macro %Q|I use the native keyboard to enter "#{text_to_type}" into text field number #{index}|
 end
 
@@ -171,7 +171,7 @@ Then /^我向(左|右|上|下)划第(\d+)个的x:(\d+),y:(\d+)$/ do |dir, index,
   macro %Q|I swipe #{dir} on number #{index} at x #{x} and y #{y}|
 end
 
-Then /^我在"([^\"]*)"上向(左|右|上|下)划$/ do |dir, mark|
+Then /^我在"([^\"]*)"上向(左|右|上|下)划$/ do |mark, dir|
   dir = DIRs[dir]
   macro %Q|I swipe #{dir} on "#{mark}"|
 end
