@@ -1,1 +1,1 @@
-Chinese translation of calabash-cucumber.
+Chinese translation of calabash-cucumber, now support calabash-cucumber and calabash-android.

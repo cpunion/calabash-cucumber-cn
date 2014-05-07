@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "calabash-cucumber-ios-cn/version"
+require "calabash-cucumber-cn/version"
 
 Gem::Specification.new do |s|
-  s.name        = "calabash-cucumber-ios-cn"
-  s.version     = Calabash::Cucumber::IOS::CN::VERSION
+  s.name        = "calabash-cucumber-cn"
+  s.version     = Calabash::Cucumber::CN::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Li Jie"]
   s.email       = ["cpunion@gmail.com"]
-  s.homepage    = "http://github.com/cpunion/calabash-cucumber-ios-cn"
+  s.homepage    = "http://github.com/cpunion/calabash-cucumber-cn"
   s.summary     = %q{Chinese translation of calabash-cucumber}
   s.description = %q{Chinese translation of calabash-cucumber.}
   s.files         = `git ls-files`.split("\n")
