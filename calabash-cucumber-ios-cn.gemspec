@@ -17,5 +17,6 @@ Gem::Specification.new do |s|
   s.licenses = ["BSD"]
 
   s.add_runtime_dependency 'calabash-cucumber', '~> 0.9', '>= 0.9.168'
+  s.add_runtime_dependency 'calabash-android', '~> 0.4', '>= 0.4.21'
 
 end
