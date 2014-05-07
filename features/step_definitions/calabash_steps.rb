@@ -1,53 +1,50 @@
 # encoding: UTF-8
 
-# calabash-ios uses "touch" and "press", calabash-android uses "click" :-(
-if Calabash.const_defined?(:Android)
-  PRESS = 'click'
-else
-  PRESS = 'press'
-end
-
 Given /^应用正在运行$/ do
   macro %Q|the app is running|
 end
 
 # -- Touch --#
 Then /^我点按屏幕左(\d+)上(\d+)$/ do |x, y|
-  macro %Q|I #{PRESS} on screen #{x} from the left and #{y} from the top|
+  if Calabash.const_defined?(:Android)
+    macro %Q|I click on screen #{x} from the left and #{y} from the top|
+  else
+    macro %Q|I press on screen #{x} from the left and #{y} from the top|
+  end
 end
 
 Then /^我点按"([^\"]*)"$/ do |name|
-  macro %Q|I #{PRESS} "#{name}"|
+  macro %Q|I press "#{name}"|
 end
 
 Then /^我点按"([^\"]*)"右(\d+)%下(\d+)$/ do |name,x,y|
-  macro %Q|I #{PRESS} #{x}% right and #{y}% down from "#{name}"|
+  macro %Q|I press #{x}% right and #{y}% down from "#{name}"|
 end
 
 Then /^我点按第(\d+)个按钮$/ do |index|
-  macro %Q|I #{PRESS} button number #{index}|
+  macro %Q|I press button number #{index}|
 end
 
 Then /^我点按"([^\"]*)"按钮$/ do |name|
-  macro %Q|I #{PRESS} the "#{name}" button|
+  macro %Q|I press the "#{name}" button|
 end
 
 Then /^我点按第(\d+)个文本框$/ do |index|
-  macro %Q|I #{PRESS} text field number #{index}|
+  macro %Q|I press text field number #{index}|
 end
 
 
 Then /^我点按文本框"([^\"]*)"$/ do |name|
-  macro %Q|I #{PRESS} the "#{name}" text field|
+  macro %Q|I press the "#{name}" text field|
 end
 
 #Note in tables views: this means visible cell index!
 Then /^我点按第(\d+)个列表项$/ do |index|
-  macro %Q|I #{PRESS} list item number #{index}|
+  macro %Q|I press list item number #{index}|
 end
 
 Then /^我点按列表项"([^\"]*)"$/ do |cell_name|
-  macro %Q|I #{PRESS} list item "#{cell_name}"|
+  macro %Q|I press list item "#{cell_name}"|
 end
 
 Then /^我切换开关$/ do
