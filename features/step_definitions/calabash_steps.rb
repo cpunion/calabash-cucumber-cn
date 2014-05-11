@@ -113,7 +113,7 @@ Then /^我等到看见"([^\"]*)"$/ do |expected_mark|
 end
 
 Then /^我等到看不见"([^\"]*)"$/ do |expected_mark|
-  macro %Q|I wait until I don't see "#{expected_mark}|
+  macro %Q|I wait until I don't see "#{expected_mark}"|
 end
 
 Then /^我等到"([^\"]*)"出现$/ do |name|
