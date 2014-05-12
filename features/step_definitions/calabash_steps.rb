@@ -5,7 +5,7 @@ Given /^应用正在运行$/ do
 end
 
 # -- Touch --#
-Then /^我点按屏幕左(\d+)上(\d+)$/ do |x, y|
+Then /^我点按屏幕左(\d+%?)上(\d+%?)$/ do |x, y|
   if Calabash.const_defined?(:Android)
     macro %Q|I click on screen #{x} from the left and #{y} from the top|
   else
