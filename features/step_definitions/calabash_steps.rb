@@ -14,7 +14,11 @@ Then /^我点按屏幕左(\d+%?)上(\d+%?)$/ do |x, y|
 end
 
 Then /^我点按"([^\"]*)"$/ do |name|
-  macro %Q|I press "#{name}"|
+  if Calabash.const_defined?(:Android)
+    macro %Q|I touch the "#{name}" text|
+  else
+    macro %Q|I press "#{name}"|
+  end
 end
 
 Then /^我点按"([^\"]*)"右(\d+)%下(\d+)$/ do |name,x,y|
