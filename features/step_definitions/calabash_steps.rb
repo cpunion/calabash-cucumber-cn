@@ -70,6 +70,16 @@ end
 
 ## -- Entering text -- ##
 
+Then /^我在当前文本框中输入"([^\"]*)"$/ do |text_to_type|
+  if Calabash.const_defined?(:Android)
+    raise NotImplementedError, "在当前文本框中输入，还没有实现"
+  else
+    wait_for_keyboard()
+    keyboard_enter_text text_to_type
+    sleep(STEP_PAUSE)
+  end
+end
+
 Then /^我在"([^\"]*)"中输入"([^\"]*)"$/ do |field_name, text_to_type|
   if Calabash.const_defined?(:Android)
     macro %Q|I enter "#{text_to_type}" into "#{field_name}"|
