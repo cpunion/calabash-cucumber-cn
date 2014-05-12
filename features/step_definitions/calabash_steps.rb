@@ -21,7 +21,7 @@ Then /^我点按"([^\"]*)"$/ do |name|
   end
 end
 
-Then /^我点按"([^\"]*)"右(\d+)%下(\d+)$/ do |name,x,y|
+Then /^我点按"([^\"]*)"右(\d+)%下(\d+)%$/ do |name,x,y|
   macro %Q|I press #{x}% right and #{y}% down from "#{name}"|
 end
 
